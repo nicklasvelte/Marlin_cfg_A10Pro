@@ -1,0 +1,9 @@
+*
+!.gitignore
+!.gitkeep
+!/Marlin/
+
+
+!/Marlin/config.ini
+!/Marlin/Configuration.h
+!/Marlin/Configuration_adv.h
