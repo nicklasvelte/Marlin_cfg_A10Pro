@@ -36,11 +36,24 @@
  * Advanced settings can be found in Configuration_adv.h
  */
 #define CONFIGURATION_H_VERSION 02010300
-#define FIL_RUNOUT_PIN 66              // Added by config.ini 2025-03-07 17:44:49
-#define MINIMUM_PLANNER_SPEED 0.05     // Added by config.ini 2025-03-07 17:44:50
-#define PROBE_OFFSET_Z_MAX 0           // Added by config.ini 2025-03-07 17:48:44
-#define PROBE_OFFSET_Z_MIN -5          // Added by config.ini 2025-03-07 17:48:44
-#define Z_SAFE_HOMING
+#define Z_PROBE_OFFSET_RANGE_MAX 0     // Added by config.ini 2025-03-09 09:26:10
+#define Z_PROBE_OFFSET_RANGE_MIN -5    // Added by config.ini 2025-03-09 09:26:10
+#define USE_XMIN_PLUG                  // Added by config.ini 2025-03-09 09:26:10
+#define USE_YMIN_PLUG                  // Added by config.ini 2025-03-09 09:26:10
+#define USE_ZMIN_PLUG                  // Added by config.ini 2025-03-09 09:26:10
+#define X_MAX_ENDSTOP_INVERTING true   // Added by config.ini 2025-03-09 09:26:10
+#define X_MIN_ENDSTOP_INVERTING true   // Added by config.ini 2025-03-09 09:26:10
+#define Y_MAX_ENDSTOP_INVERTING true   // Added by config.ini 2025-03-09 09:26:10
+#define Y_MIN_ENDSTOP_INVERTING true   // Added by config.ini 2025-03-09 09:26:10
+#define Z_MAX_ENDSTOP_INVERTING true   // Added by config.ini 2025-03-09 09:26:10
+#define Z_MIN_ENDSTOP_INVERTING true   // Added by config.ini 2025-03-09 09:26:10
+#define Z_MIN_PROBE_ENDSTOP_INVERTING true // Added by config.ini 2025-03-09 09:26:10
+#define FIL_RUNOUT_PIN 66              // Added by config.ini 2025-03-09 09:26:10
+#define INVERT_E_STEP_PIN false        // Added by config.ini 2025-03-09 09:26:11
+#define INVERT_X_STEP_PIN false        // Added by config.ini 2025-03-09 09:26:11
+#define INVERT_Y_STEP_PIN false        // Added by config.ini 2025-03-09 09:26:11
+#define INVERT_Z_STEP_PIN false        // Added by config.ini 2025-03-09 09:26:11
+#define MINIMUM_PLANNER_SPEED 0.05     // Added by config.ini 2025-03-09 09:26:11
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -156,9 +169,9 @@
  *          TMC5160, TMC5160_STANDALONE
  * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
-#define X_DRIVER_TYPE A4988
-#define Y_DRIVER_TYPE A4988
-#define Z_DRIVER_TYPE A4988
+#define X_DRIVER_TYPE A4988 
+#define Y_DRIVER_TYPE A4988 
+#define Z_DRIVER_TYPE A4988 
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
@@ -588,7 +601,7 @@
 #define TEMP_SENSOR_REDUNDANT 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
-#define DUMMY_THERMISTOR_998_VALUE 25
+#define DUMMY_THERMISTOR_998_VALUE 25 
 #define DUMMY_THERMISTOR_999_VALUE 100
 
 // Resistor values when using MAX31865 sensors (-5) on TEMP_SENSOR_0 / 1
@@ -645,7 +658,7 @@
 
 // Below this temperature the heater will be switched off
 // because it probably indicates a broken thermistor wire.
-#define HEATER_0_MINTEMP 5
+#define HEATER_0_MINTEMP 5  
 #define HEATER_1_MINTEMP   5
 #define HEATER_2_MINTEMP   5
 #define HEATER_3_MINTEMP   5
@@ -653,7 +666,7 @@
 #define HEATER_5_MINTEMP   5
 #define HEATER_6_MINTEMP   5
 #define HEATER_7_MINTEMP   5
-#define BED_MINTEMP 5
+#define BED_MINTEMP 5       
 #define CHAMBER_MINTEMP    5
 
 // Above this temperature the heater will be switched off.
@@ -667,7 +680,7 @@
 #define HEATER_5_MAXTEMP 275
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP 150
+#define BED_MAXTEMP 150     
 #define CHAMBER_MAXTEMP  60
 
 /**
@@ -711,8 +724,8 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 45.80
-    #define DEFAULT_Ki 3.61
+    #define DEFAULT_Kp 45.80 
+    #define DEFAULT_Ki 3.61  
     #define DEFAULT_Kd 145.39
   #endif
 #else
@@ -1231,12 +1244,12 @@
  * Endstop "Hit" State
  * Set to the state (HIGH or LOW) that applies to each endstop.
  */
-#define X_MIN_ENDSTOP_HIT_STATE LOW
-#define X_MAX_ENDSTOP_HIT_STATE LOW
-#define Y_MIN_ENDSTOP_HIT_STATE LOW
-#define Y_MAX_ENDSTOP_HIT_STATE LOW
-#define Z_MIN_ENDSTOP_HIT_STATE LOW
-#define Z_MAX_ENDSTOP_HIT_STATE LOW
+#define X_MIN_ENDSTOP_HIT_STATE HIGH
+#define X_MAX_ENDSTOP_HIT_STATE HIGH
+#define Y_MIN_ENDSTOP_HIT_STATE HIGH
+#define Y_MAX_ENDSTOP_HIT_STATE HIGH
+#define Z_MIN_ENDSTOP_HIT_STATE HIGH
+#define Z_MAX_ENDSTOP_HIT_STATE HIGH
 #define I_MIN_ENDSTOP_HIT_STATE HIGH
 #define I_MAX_ENDSTOP_HIT_STATE HIGH
 #define J_MIN_ENDSTOP_HIT_STATE HIGH
@@ -1297,7 +1310,7 @@
  * Override with M92 (when enabled below)
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT { 80, 80, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT { 80, 80, 400, 93 }  
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1309,7 +1322,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE { 500, 500, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE { 500, 500, 5, 25 }         
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1322,7 +1335,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION { 500, 500, 100, 5000 }
+#define DEFAULT_MAX_ACCELERATION { 500, 500, 100, 5000 }     
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1354,7 +1367,7 @@
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
   #define DEFAULT_ZJERK  0.3
-  #define DEFAULT_EJERK 5.0
+  #define DEFAULT_EJERK 5.0 
   //#define DEFAULT_IJERK  0.3
   //#define DEFAULT_JJERK  0.3
   //#define DEFAULT_KJERK  0.3
@@ -1467,7 +1480,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-#define BLTOUCH
+//#define BLTOUCH
 
 /**
  * MagLev V4 probe by MDD
@@ -1643,7 +1656,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 31, 40, 2 }
+#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -2473,15 +2486,15 @@
 //
 // Preheat Constants - Up to 10 are supported without changes
 //
-#define PREHEAT_1_LABEL "PLA"
+#define PREHEAT_1_LABEL "PLA"      
 #define PREHEAT_1_TEMP_HOTEND 190
-#define PREHEAT_1_TEMP_BED 60
+#define PREHEAT_1_TEMP_BED 60    
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED 0     // Value from 0 to 255
 
-#define PREHEAT_2_LABEL "ABS"
+#define PREHEAT_2_LABEL "ABS"      
 #define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED 90
+#define PREHEAT_2_TEMP_BED 90   
 #define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED 0     // Value from 0 to 255
 
