@@ -40,7 +40,6 @@
 #define MINIMUM_PLANNER_SPEED 0.05     // Added by config.ini 2025-03-09 09:26:11
 #define PROBE_OFFSET_Z_MAX 0           // Added by config.ini 2025-03-09 09:51:13
 #define PROBE_OFFSET_Z_MIN -5          // Added by config.ini 2025-03-09 09:51:13
-#define Z_SAFE_HOMING                  // Added manually
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -133,7 +132,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Geeetech A10Pro"
+#define CUSTOM_MACHINE_NAME "A10Pro"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1643,7 +1642,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 31, -40, -2.4 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1966,7 +1965,7 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
-#define FILAMENT_RUNOUT_SENSOR
+//#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS 1            // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
@@ -2345,7 +2344,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // (mm) X point for Z homing
